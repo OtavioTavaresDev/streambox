@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamBox</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+        }
+        .hero-bg {
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url('imgs/img1');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .content-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .content-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+        }
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(229, 9, 20, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .plan-card {
+            border: 2px solid #333;
+            transition: all 0.3s ease;
+        }
+        .plan-card:hover {
+            border-color: #e50914;
+            transform: scale(1.03);
+        }
+        .btn-red {
+            background: linear-gradient(to right, #e50914, #b1060f);
+            transition: all 0.3s ease;
+        }
+        .btn-red:hover {
+            background: linear-gradient(to right, #ff0a16, #e50914);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Cabeçalho -->
+    <header class="absolute top-0 left-0 right-0 flex justify-between items-center p-4 md:p-6 z-30">
+        <h1 class="text-2xl md:text-3xl font-bold text-red-600 flex items-center">
+            <i class="fas fa-play-circle mr-2"></i> StreamBox
+        </h1>
+        <div>
+            <a href="#" class="bg-transparent border border-gray-600 text-white px-4 py-1 rounded mr-3 hover:bg-gray-800">Entrar</a>
+            <a href="#" class="btn-red px-4 py-1 rounded font-medium">Cadastrar</a>
+        </div>
+    </header>
+
+    <!-- Seção Hero -->
+    <section class="hero-bg h-screen flex items-center justify-center text-center px-4">
+        <div class="max-w-3xl z-10">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Filmes e séries para assistir onde quiser.</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Milhares de títulos para você maratonar quando e onde quiser. Crie sua conta e comece agora mesmo.</p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-3 max-w-2xl mx-auto">
+                <input type="email" placeholder="Digite seu email" class="w-full px-5 py-4 rounded bg-gray-900 placeholder-gray-500 border border-gray-700 focus:outline-none focus:border-red-600">
+                <button class="btn-red flex items-center gap-2 px-8 py-4 rounded text-lg font-bold whitespace-nowrap">
+                    Começar
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos -->
+    <section class="py-16 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Por que escolher a StreamBox?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                <div class="text-center p-6">
+                    <div class="feature-icon">
+                        <i class="fas fa-tv text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Assista em qualquer dispositivo</h3>
+                    <p class="text-gray-400">Smart TVs, celulares, tablets, laptops - a StreamBox funciona em todos os seus dispositivos.</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="feature-icon">
+                        <i class="fas fa-download text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Baixe para assistir offline</h3>
+                    <p class="text-gray-400">Salve seus favoritos para assistir mesmo quando estiver sem internet.</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="feature-icon">
+                        <i class="fas fa-infinity text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sem limites</h3>
+                    <p class="text-gray-400">Assista o quanto quiser, quando quiser, sem interrupções de anúncios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seções de conteúdo -->
+    <section class="py-16 border-t border-gray-800 bg-gray-900">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1">
+                <h3 class="text-3xl font-bold mb-4">Assista na sua TV</h3>
+                <p class="text-lg text-gray-300 mb-6">Smart TVs, consoles, Chromecast e muito mais. A StreamBox funciona onde você estiver.</p>
+                <ul class="space-y-2 text-gray-400">
+                    <li class="flex items-center"><i class="fas fa-check text-red-600 mr-2"></i> Qualidade 4K Ultra HD</li>
+                    <li class="flex items-center"><i class="fas fa-check text-red-600 mr-2"></i> Suporte para Dolby Atmos</li>
+                    <li class="flex items-center"><i class="fas fa-check text-red-600 mr-2"></i> Controle por voz</li>
+                </ul>
+            </div>
+            <div class="flex-1 flex justify-center">
+                <div class="content-card max-w-md rounded-xl overflow-hidden shadow-2xl">
+                    <img src="imgs/img2" alt="TV" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 border-t border-gray-800">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row-reverse items-center gap-12">
+            <div class="flex-1">
+                <h3 class="text-3xl font-bold mb-4">Baixe para ver offline</h3>
+                <p class="text-lg text-gray-300 mb-6">Filmes e séries salvos no seu dispositivo para quando estiver sem internet.</p>
+                <ul class="space-y-2 text-gray-400">
+                    <li class="flex items-center"><i class="fas fa-check text-red-600 mr-2"></i> Baixe em qualquer dispositivo</li>
+                    <li class="flex items-center"><i class="fas fa-check text-red-600 mr-2"></i> Sem limite de downloads</li>
+                    <li class="flex items-center"><i class="fas fa-check text-red-600 mr-2"></i> Disponível por 30 dias</li>
+                </ul>
+            </div>
+            <div class="flex-1 flex justify-center">
+                <div class="content-card max-w-md rounded-xl overflow-hidden shadow-2xl">
+                    <img src="imgs/img3" alt="Mobile" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 border-t border-gray-800 bg-gray-900">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1">
+                <h3 class="text-3xl font-bold mb-4">Conteúdo exclusivo</h3>
+                <p class="text-lg text-gray-300 mb-6">Só na StreamBox você encontra produções originais premiadas que não estão disponíveis em nenhum outro lugar.</p>
+                <div class="grid grid-cols-2 gap-4 max-w-md">
+                    <div class="bg-gray-800 p-3 rounded-lg">
+                        <div class="text-red-600 font-bold text-2xl">50+</div>
+                        <div class="text-sm text-gray-400">Séries originais</div>
+                    </div>
+                    <div class="bg-gray-800 p-3 rounded-lg">
+                        <div class="text-red-600 font-bold text-2xl">120+</div>
+                        <div class="text-sm text-gray-400">Filmes exclusivos</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 flex justify-center">
+                <div class="content-card max-w-md rounded-xl overflow-hidden shadow-2xl">
+                    <img src="imgs/img4" alt="Conteúdo exclusivo" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos -->
+    <section class="py-16 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Escolha seu plano</h2>
+            <p class="text-lg text-center text-gray-400 mb-12 max-w-2xl mx-auto">Planos flexíveis para atender às suas necessidades. Cancele quando quiser.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="plan-card bg-gray-900 rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-4">Básico</h3>
+                    <div class="text-4xl font-bold mb-6">R$24,90<span class="text-lg text-gray-400">/mês</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 1 tela simultânea</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Qualidade HD</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Baixe em 1 dispositivo</li>
+                        <li class="flex items-center"><i class="fas fa-times text-gray-600 mr-2"></i> Conteúdo 4K</li>
+                        <li class="flex items-center"><i class="fas fa-times text-gray-600 mr-2"></i> Conteúdo exclusivo</li>
+                    </ul>
+                    <button class="btn-red w-full py-3 rounded-lg font-bold">Selecionar</button>
+                </div>
+                
+                <div class="plan-card bg-gray-900 rounded-xl p-8 border-2 border-red-600 relative">
+                    <div class="absolute top-0 right-0 bg-red-600 text-white px-4 py-1 rounded-bl-lg rounded-tr-lg font-bold">Popular</div>
+                    <h3 class="text-2xl font-bold mb-4">Padrão</h3>
+                    <div class="text-4xl font-bold mb-6">R$34,90<span class="text-lg text-gray-400">/mês</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 2 telas simultâneas</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Qualidade Full HD</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Baixe em 2 dispositivos</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Conteúdo 4K</li>
+                        <li class="flex items-center"><i class="fas fa-times text-gray-600 mr-2"></i> Conteúdo exclusivo</li>
+                    </ul>
+                    <button class="btn-red w-full py-3 rounded-lg font-bold">Selecionar</button>
+                </div>
+                
+                <div class="plan-card bg-gray-900 rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-4">Premium</h3>
+                    <div class="text-4xl font-bold mb-6">R$49,90<span class="text-lg text-gray-400">/mês</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 4 telas simultâneas</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Qualidade 4K Ultra HD</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Baixe em 4 dispositivos</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Conteúdo 4K</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Conteúdo exclusivo</li>
+                    </ul>
+                    <button class="btn-red w-full py-3 rounded-lg font-bold">Selecionar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perguntas frequentes -->
+    <section class="py-16 border-t border-gray-800 bg-gray-900">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Perguntas Frequentes</h2>
+            
+            <div class="space-y-4">
+                <div class="bg-gray-800 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
+                        <span class="text-lg font-medium">O que é a StreamBox?</span>
+                        <i class="fas fa-plus text-red-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-300">A StreamBox é um serviço de streaming que oferece uma ampla variedade de séries, filmes, documentários e muito mais. Você pode assistir onde quiser, quando quiser, sem comerciais. Tudo por um preço mensal acessível.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
+                        <span class="text-lg font-medium">Quanto custa a StreamBox?</span>
+                        <i class="fas fa-plus text-red-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-300">A StreamBox oferece três planos: Básico por R$24,90/mês, Padrão por R$34,90/mês e Premium por R$49,90/mês. Todos os planos oferecem acesso completo ao catálogo, sem restrições de conteúdo.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
+                        <span class="text-lg font-medium">Onde posso assistir?</span>
+                        <i class="fas fa-plus text-red-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-300">Assista onde quiser, quando quiser. Faça login na sua conta para assistir instantaneamente pela web em streambox.com no seu computador ou em qualquer dispositivo conectado à Internet que tenha o aplicativo StreamBox, como Smart TVs, smartphones, tablets, players de mídia e consoles de jogos.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 rounded-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center">
+                        <span class="text-lg font-medium">Como faço para cancelar?</span>
+                        <i class="fas fa-plus text-red-600"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-300">A StreamBox é flexível. Não há contratos complicados nem compromissos. Você pode cancelar a sua conta online com apenas dois cliques. Não há taxa de cancelamento - você pode começar ou encerrar a sua assinatura a qualquer momento.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-xl mb-6">Pronto para assistir? Informe seu email para criar ou reiniciar sua assinatura.</p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-3 max-w-2xl mx-auto">
+                    <input type="email" placeholder="Digite seu email" class="w-full px-5 py-4 rounded bg-gray-800 placeholder-gray-500 border border-gray-700 focus:outline-none focus:border-red-600">
+                    <button class="btn-red flex items-center gap-2 px-8 py-4 rounded text-lg font-bold whitespace-nowrap">
+                        Começar
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-black text-gray-400 py-12 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between mb-8">
+                <div class="mb-8 md:mb-0">
+                    <h2 class="text-2xl font-bold text-red-600 mb-4 flex items-center">
+                        <i class="fas fa-play-circle mr-2"></i> StreamBox
+                    </h2>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-2xl hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-2xl hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div>
+                        <h4 class="text-lg font-medium mb-4">StreamBox</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-white">Sobre nós</a></li>
+                            <li><a href="#" class="hover:text-white">Carreiras</a></li>
+                            <li><a href="#" class="hover:text-white">Imprensa</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-medium mb-4">Ajuda</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-white">Central de Ajuda</a></li>
+                            <li><a href="#" class="hover:text-white">Termos de Uso</a></li>
+                            <li><a href="#" class="hover:text-white">Privacidade</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-medium mb-4">Conteúdo</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-white">Filmes</a></li>
+                            <li><a href="#" class="hover:text-white">Séries</a></li>
+                            <li><a href="#" class="hover:text-white">Documentários</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-medium mb-4">Dispositivos</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-white">Smart TV</a></li>
+                            <li><a href="#" class="hover:text-white">Celular</a></li>
+                            <li><a href="#" class="hover:text-white">Computador</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center">
+                <p>&copy; 2025 StreamBox. Projeto educacional com imagens ilustrativas livres de direitos autorais.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                
+                if (answer.classList.contains('hidden')) {
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                } else {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
